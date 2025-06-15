@@ -25,7 +25,7 @@ export default function Home() {
           <h2 className="font-semibold text-xs text-white">✨ Join the waitlist</h2>
         </ShinyButton>
         <h1 className="text-5xl px-10 w-1/2 font-extrabold text-center text-black leading-tight" style={{fontFamily: 'Geist, Arial, sans-serif'}}>
-        Time for a tune-up?<br/> Book your appointment in just a few clicks.
+        Time for a Tune-Up?<br/> Book your appointment in just a few clicks.
         </h1>
         <p className="mt-6 text-lg md:text-xl text-center text-[#5a5a89] max-w-2xl">
         Car maintenance that finally fits your schedule. Find a top-rated pro near you and get your service booked in under a minute, right from your phone. 
