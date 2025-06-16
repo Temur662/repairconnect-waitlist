@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Repair Connect",
   description: "Repair Connect",
+  icons: {
+    icon: "/repairconnectlogo.png",
+  },
 };
 
 export default function RootLayout({
@@ -25,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased `}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased  bg-gradient-to-br from-white via-[#20B2AA] to-[#0047AB] `}
       >
         <NavBar />
         {children}

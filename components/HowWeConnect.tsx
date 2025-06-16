@@ -2,6 +2,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Iphone16Pro } from './ui/iphone-16-pro'
 import { AnimatedBeam } from './magicui/animated-beam'
+import { Ripple } from '@/components/magicui/ripple'
 
 export default function HowWeConnect() {
     const containerRef = useRef<HTMLDivElement>(null)
@@ -20,35 +21,66 @@ export default function HowWeConnect() {
     }, [])
   
   return (
-    <main className="w-full relative flex flex-col items-center justify-center mt-24 mb-16 px-10"
+    <main className="w-full relative flex flex-col items-center justify-center mt-24 mb-16 "
     ref={containerRef}
     >
         <div className="w-full flex flex-col space-y-4 items-center justify-center">
-            <h1 className='text-4xl text-center font-bold'>Smart Tech for <span className='bg-gradient-to-br from-[#F0FFFF]  to-[#007FFF] bg-clip-text text-transparent'>Smarter Car Care</span></h1>
+            <h1 className='text-5xl text-center font-bold'> Car care has never been this <span className='bg-gradient-to-br from-[#F0FFFF]  to-[#007FFF] bg-clip-text text-transparent'>Easy</span></h1>
             <p className='text-center text-gray-500 text-xl px-20'>
             Our app uses real-time data and location services to connect you with a network of vetted mechanics. See live availability, compare shops based on verified reviews, and schedule your service instantly—no back-and-forth required.
+            {/* Just tell us what you need. Our app handles everything from finding a pro to booking the service. */}
             </p>
         </div>
         <section className="w-full flex flex-col items-center justify-center mt-24 mb-16">
           <div className="w-full flex flex-row items-center justify-between gap-8">
-            {/* iPhone on the left */}
+            {/* Card on the left */}
             <div className="flex-shrink-0 z-10" ref={div7Ref}>
-              <Iphone16Pro
+              {/* <Iphone16Pro
                 src="https://res.cloudinary.com/deelfmnhg/image/upload/v1733892005/Neon_Graaadients_D1_1_icds31.jpg"
                 className="h-100 w-full"
-              />
+              /> */}
+              <div className="bg-white/10 backdrop-blur-3xl rounded-2xl shadow-lg p-8 w-70 border border-gray-100">
+                <div className="flex flex-row items-center justify-between w-fit bg-blue-300/80 rounded-full py-1 px-2 mb-2">
+                  <p className='text-xs text-gray-900 font-semibold'>Service in minutes</p>
+                </div>
+                <h2 className="text-xl font-bold mb-4 text-gray-900 ">Find a Pro</h2>
+                <div className="mb-3">
+                  <div className="text-xs text-gray-500 font-semibold mb-1">My Vehicle</div>
+                  <div className="text-base font-medium text-gray-800">Toyota Camry SE 2024</div>
+                </div>
+                <div className="mb-3">
+                  <div className="text-xs text-gray-500 font-semibold mb-1">Service Required</div>
+                  <select className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm text-gray-700 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-200">
+                    <option>Scheduled Maintenance</option>
+                    <option>Engine Diagnostics</option>
+                    <option>Battery Replacement</option>
+                    <option>AC Service</option>
+                  </select>
+                </div>
+                <div className="mb-4">
+                  <div className="text-xs text-gray-500 font-semibold mb-1">Tasks</div>
+                  <div className="flex flex-wrap gap-2 mt-1">
+                    {["Oil Change", "Tire Rotation", "Brake Inspection", "100k Mile Service"].map(task => (
+                      <span key={task} className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs font-medium border border-blue-100">{task}</span>
+                    ))}
+                  </div>
+                </div>
+                <button className="w-full py-3 rounded-xl bg-gradient-to-r from-[#536bf2] to-[#007FFF] text-white font-semibold text-sm shadow transition hover:from-[#4256c7] hover:to-[#005fcc]">
+                  Get Quotes
+                </button>
+              </div>
             </div>
             {/* Network Visualization on the right */}
             <div className="relative flex items-center justify-center" style={{ width: 500, height: 500 }}>
               {/* Glowing Circle */}
               <div className="absolute rounded-full" style={{ width: 440, height: 440, background: 'radial-gradient(circle at 50% 50%, #23233b 60%, #0a0a23 100%)', boxShadow: '0 0 80px 20px #3b3b5c, 0 0 0 8px #23233b' }} />
               {/* Center Person (faded) */}
-              <div className="absolute left-1/2 top-1/2" style={{ transform: 'translate(-50%, -50%)', opacity: 0.2 }}>
+              {/* <div className="absolute left-1/2 top-1/2" style={{ transform: 'translate(-50%, -50%)', opacity: 0.2 }}>
                 <div className="flex flex-col items-center">
                   <img src="https://randomuser.me/api/portraits/women/44.jpg" className="w-20 h-20 rounded-full border-4 border-gray-700" alt="Mary Hoff" />
                   <div className="mt-2 px-4 py-2 rounded-xl bg-black/60 text-white text-center text-xs font-semibold shadow">Mary Hoff<br /><span className="font-normal">Auto Shop Owner</span></div>
                 </div>
-              </div>
+              </div> */}
 
               {/* Top Person */}
               <div className="absolute left-1/2" style={{ top: 10, transform: 'translateX(-50%)' }} ref={div1Ref}>
@@ -60,19 +92,19 @@ export default function HowWeConnect() {
               {/* Left Person */}
               <div className="absolute top-1/3 left-0" style={{ transform: 'translateY(-50%)' }} ref={div2Ref}>
                 <div className="flex flex-col items-center">
-                  <img src="https://randomuser.me/api/portraits/women/65.jpg" className="w-16 h-16 rounded-full border-4 border-gray-700" alt="Marion S. Combs" />
-                  <div className="mt-2 px-4 py-2 rounded-xl bg-black/80 text-white text-center text-xs font-semibold shadow">Marion S. Combs<br /><span className="font-normal">Auto Shop Owner</span></div>
+                  <img src="https://randomuser.me/api/portraits/men/65.jpg" className="w-16 h-16 rounded-full border-4 border-gray-700" alt="Marion S. Combs" />
+                  <div className="mt-2 px-4 py-2 rounded-xl bg-black/80 text-white text-center text-xs font-semibold shadow">Rafeo Keen<br /><span className="font-normal">Auto Shop Owner</span></div>
                 </div>
               </div>
               {/* Bottom Person */}
-              <div className="absolute left-1/2 bottom-0" style={{ transform: 'translateX(-50%)' }} ref={div3Ref}>
+              <div className="absolute left-1/2 -bottom-12" style={{ transform: 'translateX(-50%)' }} ref={div3Ref}>
                 <div className="flex flex-col items-center">
-                  <img src="https://randomuser.me/api/portraits/women/68.jpg" className="w-16 h-16 rounded-full border-4 border-gray-700" alt="Lisa J. Bollin" />
-                  <div className="mt-2 px-4 py-2 rounded-xl bg-black/80 text-white text-center text-xs font-semibold shadow">Lisa J. Bollin<br /><span className="font-normal">Auto Shop Owner</span></div>
+                  <img src="https://randomuser.me/api/portraits/men/68.jpg" className="w-16 h-16 rounded-full border-4 border-gray-700" alt="James Justin" />
+                  <div className="mt-2 px-4 py-2 rounded-xl bg-black/80 text-white text-center text-xs font-semibold shadow">James Justin<br /><span className="font-normal">Auto Shop Owner</span></div>
                 </div>
               </div>
               {/* Right Person */}
-              <div className="absolute top-1/3 right-0" style={{ transform: 'translateY(-50%)' }} ref={div4Ref}>
+              <div className="absolute top-1/2 -right-10" style={{ transform: 'translateY(-50%)' }} ref={div4Ref}>
                 <div className="flex flex-col items-center">
                   <img src="https://randomuser.me/api/portraits/men/76.jpg" className="w-16 h-16 rounded-full border-4 border-gray-700" alt="Kenny Acevedo" />
                   <div className="mt-2 px-4 py-2 rounded-xl bg-black/80 text-white text-center text-xs font-semibold shadow">Kenny Acevedo<br /><span className="font-normal">Auto Shop Owner</span></div>
@@ -91,13 +123,12 @@ export default function HowWeConnect() {
         {/* AnimatedBeams */}
       {isReady && (
         <>
-          <AnimatedBeam containerRef={containerRef} fromRef={div7Ref} toRef={div1Ref} duration={3} />
-          <AnimatedBeam containerRef={containerRef} fromRef={div7Ref} toRef={div2Ref} duration={3} />
-          <AnimatedBeam containerRef={containerRef} fromRef={div7Ref} toRef={div3Ref} duration={3} />
-          <AnimatedBeam containerRef={containerRef} fromRef={div7Ref} toRef={div4Ref} duration={3} />
-          <AnimatedBeam containerRef={containerRef} fromRef={div4Ref} toRef={div5Ref} duration={3} />
-          <AnimatedBeam containerRef={containerRef} fromRef={div5Ref} toRef={div6Ref} duration={3} />
-          <AnimatedBeam containerRef={containerRef} fromRef={div6Ref} toRef={div7Ref} duration={3} />
+          <AnimatedBeam containerRef={containerRef} fromRef={div1Ref} toRef={div7Ref} duration={3}  />
+          <AnimatedBeam containerRef={containerRef} fromRef={div2Ref} toRef={div7Ref} duration={3}  />
+          <AnimatedBeam containerRef={containerRef} fromRef={div7Ref} toRef={div3Ref} duration={3}  />
+          <AnimatedBeam containerRef={containerRef} fromRef={div7Ref} toRef={div4Ref} duration={3}  />
+          <AnimatedBeam containerRef={containerRef} fromRef={div7Ref} toRef={div4Ref} duration={3}  />
+          <AnimatedBeam containerRef={containerRef} fromRef={div7Ref} toRef={div5Ref} duration={3}  />
           {/* <AnimatedBeam containerRef={containerRef} fromRef={div6Ref} toRef={div7Ref} duration={3} /> */}
         </>
       )}

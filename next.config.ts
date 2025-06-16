@@ -20,7 +20,12 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'randomuser.me',
       },
+      {
+        protocol: 'https',
+        hostname: 'api.dicebear.com',
+      },
     ],
+    dangerouslyAllowSVG: true,
   },
 };
 
