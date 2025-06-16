@@ -3,7 +3,10 @@ import React, { useEffect, useRef, useState } from 'react'
 import { Iphone16Pro } from './ui/iphone-16-pro'
 import { AnimatedBeam } from './magicui/animated-beam'
 import { Ripple } from '@/components/magicui/ripple'
-
+import { Globe } from '@/components/magicui/globe'
+import MapLayout from '@/public/3dmaplayout.png'
+import Image from 'next/image'
+import CartoonTown from '@/public/landingmap.png'
 export default function HowWeConnect() {
     const containerRef = useRef<HTMLDivElement>(null)
     const div1Ref = useRef<HTMLDivElement>(null)
@@ -21,7 +24,7 @@ export default function HowWeConnect() {
     }, [])
   
   return (
-    <main className="w-full relative flex flex-col items-center justify-center mt-24 mb-16 "
+    <main className="w-full relative flex flex-col items-center justify-center"
     ref={containerRef}
     >
         <div className="w-full flex flex-col space-y-4 items-center justify-center">
@@ -71,9 +74,10 @@ export default function HowWeConnect() {
               </div>
             </div>
             {/* Network Visualization on the right */}
-            <div className="relative flex items-center justify-center" style={{ width: 500, height: 500 }}>
+            <div className="relative flex items-center justify-center" style={{ width: 600, height: 600 }}>
               {/* Glowing Circle */}
-              <div className="absolute rounded-full" style={{ width: 440, height: 440, background: 'radial-gradient(circle at 50% 50%, #23233b 60%, #0a0a23 100%)', boxShadow: '0 0 80px 20px #3b3b5c, 0 0 0 8px #23233b' }} />
+              {/* <div className="absolute rounded-full backdrop-blur-3xl" style={{ width: 440, height: 440, background: 'rgba(255, 255, 255, 0.2)', boxShadow: '0 0 30px rgba(255, 255, 255, 0.5)' }} /> */}
+              {/* <Globe className='h-full text-white w-full '  /> */}
               {/* Center Person (faded) */}
               {/* <div className="absolute left-1/2 top-1/2" style={{ transform: 'translate(-50%, -50%)', opacity: 0.2 }}>
                 <div className="flex flex-col items-center">
@@ -81,39 +85,43 @@ export default function HowWeConnect() {
                   <div className="mt-2 px-4 py-2 rounded-xl bg-black/60 text-white text-center text-xs font-semibold shadow">Mary Hoff<br /><span className="font-normal">Auto Shop Owner</span></div>
                 </div>
               </div> */}
+                <div className='h-full w-full [mask-composite:intersect] [mask-image:linear-gradient(to_right,transparent,black_6rem),linear-gradient(to_left,transparent,black_6rem),linear-gradient(to_bottom,transparent,black_6rem),linear-gradient(to_top,transparent,black_6rem)] rotate-x-20 -skew-x-20 p-4  '>
+                  <Image src={CartoonTown} alt='Map Layout' className='h-full w-full object-cover' draggable={false} />
+                </div>
+
 
               {/* Top Person */}
-              <div className="absolute left-1/2" style={{ top: 10, transform: 'translateX(-50%)' }} ref={div1Ref}>
+              <div className="absolute right-0 top-10" style={{ }} ref={div1Ref}>
                 <div className="flex flex-col items-center">
-                  <img src="https://randomuser.me/api/portraits/men/32.jpg" className="w-16 h-16 rounded-full border-4 border-gray-700" alt="Richard Levy" />
-                  <div className="mt-2 px-4 py-2 rounded-xl bg-black/80 text-white text-center text-xs font-semibold shadow">Richard Levy<br /><span className="font-normal">Sr. Auto Shop Owner</span></div>
+                  <img src="https://api.dicebear.com/9.x/notionists-neutral/svg?seed=Christopher" className="w-16 h-16 rounded-full border-4 border-gray-700" alt="Richard Levy" />
+                  <div className="mt-2 px-4 py-2 rounded-xl bg-black/80 text-white text-center text-xs font-semibold shadow">Richard Levy<br /><span className="font-normal">Auto Shop Owner</span></div>
                 </div>
               </div>
               {/* Left Person */}
-              <div className="absolute top-1/3 left-0" style={{ transform: 'translateY(-50%)' }} ref={div2Ref}>
+              <div className="absolute top-1/3 left-20" style={{ transform: 'translateY(-50%)' }} ref={div2Ref}>
                 <div className="flex flex-col items-center">
-                  <img src="https://randomuser.me/api/portraits/men/65.jpg" className="w-16 h-16 rounded-full border-4 border-gray-700" alt="Marion S. Combs" />
+                  <img src="https://api.dicebear.com/9.x/notionists-neutral/svg?seed=Luis" className="w-16 h-16 rounded-full border-4 border-gray-700" alt="Marion S. Combs" />
                   <div className="mt-2 px-4 py-2 rounded-xl bg-black/80 text-white text-center text-xs font-semibold shadow">Rafeo Keen<br /><span className="font-normal">Auto Shop Owner</span></div>
                 </div>
               </div>
               {/* Bottom Person */}
-              <div className="absolute left-1/2 -bottom-12" style={{ transform: 'translateX(-50%)' }} ref={div3Ref}>
+              {/* <div className="absolute left-1/2 -bottom-10" style={{ transform: 'translateX(-50%)' }} ref={div3Ref}>
                 <div className="flex flex-col items-center">
                   <img src="https://randomuser.me/api/portraits/men/68.jpg" className="w-16 h-16 rounded-full border-4 border-gray-700" alt="James Justin" />
                   <div className="mt-2 px-4 py-2 rounded-xl bg-black/80 text-white text-center text-xs font-semibold shadow">James Justin<br /><span className="font-normal">Auto Shop Owner</span></div>
                 </div>
-              </div>
+              </div> */}
               {/* Right Person */}
-              <div className="absolute top-1/2 -right-10" style={{ transform: 'translateY(-50%)' }} ref={div4Ref}>
+              <div className="absolute top-1/2 right-1/3" style={{ transform: 'translateY(-50%)' }} ref={div4Ref}>
                 <div className="flex flex-col items-center">
-                  <img src="https://randomuser.me/api/portraits/men/76.jpg" className="w-16 h-16 rounded-full border-4 border-gray-700" alt="Kenny Acevedo" />
+                  <img src="https://api.dicebear.com/9.x/notionists-neutral/svg?seed=Luisg" className="w-16 h-16 rounded-full border-4 border-gray-700" alt="Kenny Acevedo" />
                   <div className="mt-2 px-4 py-2 rounded-xl bg-black/80 text-white text-center text-xs font-semibold shadow">Kenny Acevedo<br /><span className="font-normal">Auto Shop Owner</span></div>
                 </div>
               </div>
               {/* Bottom Right Person */}
-              <div className="absolute right-4 bottom-10" ref={div5Ref}>
+              <div className="absolute right-1/4 bottom-10" ref={div5Ref}>
                 <div className="flex flex-col items-center">
-                  <img src="https://randomuser.me/api/portraits/men/85.jpg" className="w-16 h-16 rounded-full border-4 border-gray-700" alt="William Johnson" />
+                  <img src="https://api.dicebear.com/9.x/notionists-neutral/svg?seed=Alexander" className="w-16 h-16 rounded-full border-4 border-gray-700" alt="William Johnson" />
                   <div className="mt-2 px-4 py-2 rounded-xl bg-black/80 text-white text-center text-xs font-semibold shadow">William Johnson<br /><span className="font-normal">Auto Shop Owner</span></div>
                 </div>
               </div>

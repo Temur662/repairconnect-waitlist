@@ -138,7 +138,7 @@ export default function Home() {
       </section>
 
       {/* Iphone 16 Pro, How we connect users and auto shops */}
-      <section className="px-40 w-full flex"><HowWeConnect /></section>
+      <section className="px-20 w-full flex"><HowWeConnect /></section>
       <Reviews />
       {/* Features Section */}
       <section className="px-40 w-full flex py-20"><Features /></section>
