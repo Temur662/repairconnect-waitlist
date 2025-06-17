@@ -16,8 +16,11 @@ import Logo from "@/public/repairconnectlogo.png";
 import React from "react";
 import Reviews from "@/components/Reviews";
 import LandingMap from "@/public/landingmap.png";
+import { toast } from "sonner"
+import AddToWaitlistForm from "@/components/AddToWaitlistForm";
 export default function Home() {
   //  bg-gradient-to-b  from-white to-[#0a2257]
+ 
   return (
     <main className="relative flex min-h-screen pt-20 flex-col space-y-32 items-center justify-center overflow-hidden px-20 bg-white/80 backdrop-blur-3xl">
       {/* Landing Page Header */}
@@ -36,19 +39,7 @@ export default function Home() {
         <p className="mt-6 text-lg md:text-xl text-center text-[#5a5a89] max-w-2xl">
         Car maintenance that finally fits your schedule. Find a top-rated pro near you and get your service booked in under a minute, right from your phone. 
         </p>
-        <form className="mt-8 flex flex-col sm:flex-row items-center gap-4 w-full max-w-xl">
-          <input
-            type="email"
-            placeholder="Enter Email Address"
-            className="flex-1 px-4 py-4 rounded-xl shadow text-sm border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-200 transition"
-          />
-          <button
-            type="submit"
-            className="px-8 py-4 rounded-xl bg-gradient-to-r from-[#536bf2]  to-[#007FFF] text-white font-semibold text-sm shadow transition"
-          >
-            Join Waitlist
-          </button>
-        </form>
+        <AddToWaitlistForm />
         <div className="flex flex-row items-center justify-center gap-4 mt-8">
           <Avatars />
           <p className="text-sm bg-gradient-to-r from-black to-gray-400 bg-clip-text text-transparent">Join 1000+ others who signed up</p>
